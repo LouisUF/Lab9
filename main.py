@@ -6,6 +6,11 @@ def encode(password):
         returnString += str((int(char) + 3) % 10)
     return returnString
 
+def decode(password):
+    string = ""
+    for char in password:
+        string += f"{int(char) - 3}"
+    return string 
 
 def main():
     print("Menu")
@@ -22,7 +27,7 @@ def main():
             password = encode(passToEncode)
             print("Your password has been encoded and stored!")
         elif choice == 2:
-            decodedPassword = ""
+            decodedPassword = decode(password)
             print("The encoded password is ", password, ", and the original password is ", decodedPassword, ".")
 
 if __name__ == "__main__":
